@@ -1,0 +1,12 @@
+type Query {
+    ad: AdInfo!
+    ads: [AdInfo!]!
+  }
+  
+  type AdInfo {
+    id: ID!
+    title: String!
+    text: String!
+    category: String!
+    url: String!
+  }
