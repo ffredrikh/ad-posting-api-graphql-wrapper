@@ -3,6 +3,15 @@ type Query {
     ads: [AdInfo!]!
   }
   
+type Mutation {
+  post(
+    title: String!, 
+    text: String!,
+    category: String!,
+    url: String! 
+    ): AdInfo!
+}
+
   type AdInfo {
     id: ID!
     title: String!

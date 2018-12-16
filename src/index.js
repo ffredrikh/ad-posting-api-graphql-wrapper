@@ -1,6 +1,8 @@
 const { GraphQLServer }  = require('graphql-yoga')
 let data = require('./testdata');
 
+let idCount = data.Ads.length;
+
   const resolvers = {
     Query: {
       ad: () => data.Ad,
@@ -13,7 +15,21 @@ let data = require('./testdata');
       text: (root) => root.text,
       category: (root) => root.category,
       url: (root) => root.url,
-    }
+    },
+
+    Mutation: {
+      post: (root, args) => {
+         const ad = {
+          id: `ad-${idCount++}`,
+          title: args.description,
+          text: args.text,
+          category: args.category,
+          url: args.url,
+        }
+        data.Ads.push(ad);
+        return ad;
+      }
+    },
   }
 
 
