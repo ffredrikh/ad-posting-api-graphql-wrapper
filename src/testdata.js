@@ -1,3 +1,30 @@
+/* Testquerys
+
+  query {
+    ads {
+      id
+      title
+      category
+      text
+      url
+    }
+  }
+
+  mutation {
+    post(
+      title: "title x"
+      text: "text y"
+      category: "cat z"
+      url: "www" 
+    ) {
+      id
+    }
+  }
+
+
+
+*/
+
 let Ads = [{
     id: '1',
     title: 'test ad 1',

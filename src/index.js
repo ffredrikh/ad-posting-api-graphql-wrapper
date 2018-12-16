@@ -20,8 +20,8 @@ let idCount = data.Ads.length;
     Mutation: {
       post: (root, args) => {
          const ad = {
-          id: `ad-${idCount++}`,
-          title: args.description,
+          id: `${++idCount}`,
+          title: args.title,
           text: args.text,
           category: args.category,
           url: args.url,
